@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sass-task</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/style.css" rel="stylesheet"> 
+    <link href="https://googleapis.com" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="glitch.jquery.js"></script>
+
+<script>
+  $(function () {
+    $('span.block').glitch();
+  });
+</script>
+    
+    <script src="https://googleapis.com"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/2.21.0/core.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+  <div class="container">
+    <div class="inner-navbar">
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="main-menu" id="main-menu">
+        <li class="home"><a href="#">Home</a></li>
+        <li><a href="#">Resume</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#" class="btn-outline">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="hero">
+        <div class="container">
+            <div class="inner-hero">
+                 <span class="block">I'M Munib Kashif</span>
+                 <p id="typewriter"></p> 
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+        <ul class="inner-footer">
+                <li><a href="#"><img src="./images/607039ed-ee68-4968-bea6-f01cae5a4c90_removalai_preview.png"></a></li>
+                <li><a href="#"><img src="./images/62309fd1-0f2f-4556-a0b4-44672703317c_removalai_preview.png"></a></li>
+                 <li><a href="#"><img src="./images/ed2dc83e-a8ae-453f-83e1-16978acbb1aa_removalai_preview.png"></a></li>
+                 <li><a href="#"><img src="./images/848e4eb5-4f7d-4d2d-a0e3-0f6296ac1aeb_removalai_preview.png"></a></li>
+            </ul>
+            </div>
+    </div>
+
+    <script>
+      window.onload = function() {
+        var hamburger = document.getElementById('hamburger');
+        var mainMenu = document.getElementById('main-menu');
+        
+        if (hamburger && mainMenu) {
+          hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            mainMenu.classList.toggle('active');
+          });
+        }
+
+        var element = document.getElementById('typewriter');
+
+        if (element) {
+          var typewriter = new Typewriter(element, {
+            loop: true,
+            delay: 75,
+            autoStart: true
+          });
+
+          typewriter
+            .typeString('UX/UI Designer and Front-end Director')
+            .pauseFor(2000)
+            .deleteAll()
+            .typeString('Based in Lahore...')
+            .pauseFor(2000)
+            .start();
+        }
+
+        if (typeof jQuery !== 'undefined' && $.fn.glitch) {
+            $('span.block').glitch();
+        }
+      };
+    </script>
+</body>
+</html>
